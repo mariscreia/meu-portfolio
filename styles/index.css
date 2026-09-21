@@ -1,0 +1,2262 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #190f28 0%,
+            #09050f 25%,
+            #030204 55%,
+            #020103 100%
+        );
+
+    color: var(--branco);
+
+    overflow-x: hidden;
+}
+
+*:focus {
+    outline: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   VARIÁVEIS
+   ========================================================= */
+
+:root {
+
+    --branco: #f4eef8;
+
+    --destaque-escuro: #6430C0;
+
+    --destaque-claro: #B393E8;
+
+    --fundo-musica-expandido: #8E6DC5;
+
+    --gradiente-titulo:
+        linear-gradient(
+            90deg,
+            #6430C0,
+            #B08FE6,
+            #A885E2,
+            #7F52CE,
+            #6430C0
+        );
+}
+
+
+
+/* =========================================================
+   FONTES
+   ========================================================= */
+
+.html-paragrafo {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+.html-termo {
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+.html-titulo-h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    background: var(--gradiente-titulo);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.subtitulo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+}
+
+.strong {
+    color: var(--destaque-claro);
+}
+
+
+
+/* =========================================================
+   LINKS / SUBLINHADO
+   ========================================================= */
+
+.link-sublinhado {
+
+    position: relative;
+
+    display: inline-block;
+
+    width: fit-content;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.link-sublinhado::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--destaque-escuro);
+
+    transition: width 0.35s ease;
+}
+
+.link-sublinhado:hover::after,
+.link-sublinhado.ativo::after {
+
+    width: 100%;
+}
+
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 75px;
+
+    padding: 0 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 1000;
+
+    transition: transform 0.4s ease;
+}
+
+header.header-escondido {
+
+    transform: translateY(-100%);
+}
+
+
+
+/* LOGO */
+
+.logo img {
+
+    width: 50px;
+
+    display: block;
+}
+
+
+
+/* NAV */
+
+header nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+header nav a {
+
+    position: relative;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 15px;
+
+    letter-spacing: 0.8px;
+
+    padding-bottom: 7px;
+}
+
+header nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--destaque-claro);
+
+    transition: width 0.35s ease;
+}
+
+header nav a:hover::after,
+header nav a.ativo::after {
+
+    width: 100%;
+}
+
+/* =========================================================
+   MENU HAMBÚRGUER
+   ========================================================= */
+
+.menu-hamburguer {
+
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.menu-hamburguer span {
+
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    background: var(--destaque-escuro);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* BOTÃO TRANSFORMADO EM X */
+
+.menu-hamburguer.aberto span:nth-child(1) {
+
+    transform:
+        translateY(6px)
+        rotate(45deg);
+}
+
+.menu-hamburguer.aberto span:nth-child(2) {
+
+    opacity: 0;
+}
+
+.menu-hamburguer.aberto span:nth-child(3) {
+
+    transform:
+        translateY(-6px)
+        rotate(-45deg);
+}
+
+/* =========================================================
+   PLAYER DE MÚSICA
+   ========================================================= */
+
+.musica-container {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+#musica-button {
+
+    width: 50px;
+
+    height: auto;
+
+    padding: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+#musica-button img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+
+/* animação quando a música toca */
+
+#musica-button.tocando img {
+
+    animation:
+        musicaMexendo 1.2s ease-in-out infinite,
+        musicaBrilho 1.8s ease-in-out infinite;
+}
+
+@keyframes musicaMexendo {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-3px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(1px) rotate(4deg);
+    }
+
+    75% {
+        transform: translateY(-2px) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes musicaBrilho {
+
+    0% {
+        filter:
+            drop-shadow(
+                0 0 0 rgba(179, 147, 232, 0)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 12px rgba(179, 147, 232, 0.9)
+            );
+    }
+
+    100% {
+        filter:
+            drop-shadow(
+                0 0 0 rgba(179, 147, 232, 0)
+            );
+    }
+}
+
+
+
+/* PLAYER ABERTO */
+
+.musica-player {
+
+    position: absolute;
+
+    top: 58px;
+
+    right: 0;
+
+    width: 310px;
+
+    padding: 20px;
+
+    background: rgba(15, 9, 22, 0.96);
+
+    border: 1px solid rgba(179, 147, 232, 0.4);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.musica-player.aberto {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.musica-label {
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--destaque-claro);
+
+    letter-spacing: 1px;
+}
+
+#musica-titulo {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    margin-top: 6px;
+}
+
+.musica-controles {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.musica-controles button {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 1px solid rgba(179, 147, 232, 0.4);
+
+    background: transparent;
+
+    color: var(--branco);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.musica-controles button:hover {
+
+    background: var(--destaque-escuro);
+
+}
+
+
+
+/* =========================================================
+   INÍCIO
+   ========================================================= */
+
+#inicio {
+
+    min-height: 100vh;
+
+    padding:
+        180px
+        10%
+        100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("../assets/img/home_plano_fundo.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    gap: 15px;
+}
+
+#home-cursive {
+
+    font-family: "Ingrid Darling", cursive;
+
+    font-size: 50px;
+
+    transform: rotate(-5deg);
+
+    margin-bottom: -5px;
+
+    color: var(--branco);
+}
+
+#inicio h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    font-weight: 400;
+
+    background: var(--gradiente-titulo);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+#home-categoia {
+
+    margin-top: 10px;
+
+    color: var(--destaque-claro);
+}
+
+#inicio .html-paragrafo {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+}
+
+#home-ver-mais {
+
+    margin-top: 35px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 18px;
+
+    color: var(--branco);
+}
+
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+#sobre,
+#habilidades,
+#projetos,
+#curiosidades,
+#contato {
+
+    position: relative;
+
+    padding: 100px 8%;
+}
+
+
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+
+#sobre {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 100px;
+}
+
+.sobre-imagens {
+
+    position: relative;
+
+    width: 420px;
+
+    height: 500px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.sobre_foto {
+
+    width: 330px;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+/* órbita */
+
+.sobre_saturno_orbita {
+
+    position: absolute;
+
+    width: 390px;
+
+    height: 390px;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: orbitaSaturno 12s linear infinite;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.sobre_saturno {
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: contain;
+
+    top: -5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(179, 147, 232, 0.35)
+        );
+}
+
+@keyframes orbitaSaturno {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+
+.sobre_conteudo {
+
+    max-width: 580px;
+}
+
+#sobre_paragrafos {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.strong, strong{
+    color:var(--destaque-escuro);
+}
+
+#conheca-mais {
+
+    margin-top: 30px;
+
+    font-size: 22px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+}
+
+
+
+/* =========================================================
+   HABILIDADES
+   ========================================================= */
+
+#habilidades {
+
+    min-height: 100vh;
+}
+
+.habilidades_cabecalho {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.habilidades_titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.habilidades_titulo img {
+
+    width: 100px;
+
+    object-fit: contain;
+}
+
+.habilidades_cabecalho_esquerda > .html-paragrafo {
+
+    margin-top: 15px;
+}
+
+
+
+/* CARDS */
+
+.habilidades_container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.habilidades_container_card {
+
+    min-height: 230px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+    border: 1px solid rgba(179, 147, 232, 0.25);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(100, 48, 192, 0.07),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.habilidades_container_card:hover {
+
+    transform: translateX(10px);
+
+    border-color: var(--destaque-escuro);
+}
+
+.habilidades_card_logos {
+
+    min-width: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.habilidades_icones {
+
+    width: 45px;
+
+    height: 45px;
+
+    object-fit: contain;
+}
+
+.habilidades_conteudo {
+
+    flex: 1;
+}
+
+.habilidades_paragrafo {
+
+    margin-top: 15px;
+
+    max-width: 700px;
+}
+
+.habilidades_conteudo .html-termo {
+
+    margin-top: 15px;
+
+    color: var(--destaque-escuro);
+}
+
+
+
+/* =========================================================
+   SOFT SKILLS — SATURNO LATERAL
+   ========================================================= */
+
+.softskills_area {
+    position: absolute;
+    top: 195px;
+    left: 50%;
+    width: 100%;
+    max-width: 1000px;
+    transform: translateX(-50%);
+    z-index: 20;
+    pointer-events: none;
+}
+
+
+
+/* SATURNO */
+
+#softskills-toggle {
+    width: 85px;
+
+    height: 85px;
+
+    padding: 7px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    animation: saturnoPulsando 2.5s ease-in-out infinite;
+}
+
+#softskills-toggle img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(179, 147, 232, 0.3)
+        );
+
+    transition:
+        filter 0.3s ease,
+        transform 0.3s ease;
+}
+
+#softskills-toggle:hover img {
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(179, 147, 232, 0.8)
+        );
+
+}
+
+@keyframes saturnoPulsando {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.softskills_hint {
+    position: absolute;
+    top: 32px;
+    left: 90px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--destaque-claro);
+
+    white-space: nowrap;
+
+    opacity: 0;
+    animation: aparecerHint 1s ease 0.8s forwards;
+}
+
+@keyframes aparecerHint {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* PAINEL */
+
+.habilidades_softskills {
+
+    position: absolute;
+
+    top: -40px;
+
+    left: 75px;
+
+    width: 390px;
+
+    max-height: 650px;
+
+    padding: 35px 30px;
+
+    background: rgba(8, 4, 13, 0.98);
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.45);
+
+    box-shadow:
+        15px 20px 50px
+        rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    overflow-y: auto;
+
+    pointer-events: auto;
+}
+
+.habilidades_softskills.aberto {
+
+    display: flex;
+
+    animation:
+        abrirPainelSoftskills
+        0.5s ease;
+}
+
+@keyframes abrirPainelSoftskills {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+/* X */
+
+#softskills-fechar {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 14px;
+
+    width: 35px;
+
+    height: 35px;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--branco);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#softskills-fechar:hover {
+
+    color: var(--destaque-claro);
+
+    transform: rotate(90deg);
+}
+
+
+
+/* INTRO */
+
+.habilidades_softskills_intro {
+
+    padding-right: 30px;
+
+    margin-bottom: 5px;
+}
+
+.habilidades_softskills_intro .html-termo {
+
+    color: var(--destaque-claro);
+}
+
+.habilidades_softskills_intro .subtitulo {
+
+    margin-top: 5px;
+}
+
+
+
+/* SOFT SKILLS */
+
+.softskill {
+
+    width: 100%;
+}
+
+.softskill_botao {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.25);
+
+    color: var(--branco);
+
+    font-family: "Montserrat", sans-serif;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.softskill_botao:hover {
+
+    border-color: var(--destaque-claro);
+
+    transform: translateX(5px);
+}
+
+.softskill_botao img {
+
+    width: 32px;
+
+    height: 32px;
+
+    object-fit: contain;
+}
+
+.softskill_descricao {
+
+    display: none;
+
+    padding:
+        12px
+        15px
+        5px
+        62px;
+}
+
+.softskill_descricao.ativo {
+
+    display: block;
+
+    animation:
+        aparecerSoftskill
+        0.3s ease;
+}
+
+@keyframes aparecerSoftskill {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* =========================================================
+   PROJETOS
+   ========================================================= */
+
+#projetos {
+
+    min-height: 100vh;
+}
+
+.projetos_cabecalho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 50px;
+}
+
+.projetos_cabecalho_texto {
+
+    max-width: 650px;
+}
+
+.projetos_cabecalho_texto .html-paragrafo {
+
+    margin-top: 15px;
+}
+
+
+
+/* SETAS */
+
+.projetos_navegacao {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.projetos_navegacao .projeto_botao {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.45);
+
+    color: var(--branco);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.projetos_navegacao .projeto_botao:hover {
+
+    background: var(--destaque-claro);
+
+}
+
+
+
+/* FILTRO + CARDS */
+
+.projeto_conteudo {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 35px;
+}
+
+.projeto_filtro {
+
+    flex-shrink: 0;
+
+    width: 130px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    border-top:
+        1px solid
+        var(--destaque-escuro);
+
+    padding-top: 20px;
+}
+
+.projeto_filtro button {
+
+    border: none;
+
+    background: none;
+
+    color: var(--branco);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    padding: 0;
+}
+
+.projeto_filtro button.ativo {
+
+    color: var(--destaque-claro);
+}
+
+#aside_img {
+
+    width: 30px;
+
+    margin-top: 15px;
+}
+
+
+
+/* CARDS */
+
+.cards_container {
+
+    flex: 1;
+
+    display: flex;
+
+    gap: 25px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    padding-bottom: 15px;
+}
+
+.cards_container::-webkit-scrollbar {
+
+    display: none;
+}
+
+.projeto_card {
+
+    flex:
+        0
+        0
+        310px;
+
+    min-height: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.25);
+
+    background:
+        rgba(10, 6, 15, 0.8);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.projeto_card:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(179, 147, 232, 0.7);
+}
+
+.projeto_card_img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.projeto_card_conteudo {
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.projetos_cards_titulo {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+.projeto_card_conteudo .html-termo {
+
+    color: var(--destaque-claro);
+
+    margin-top: 8px;
+}
+
+.projetos_detalhes {
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: var(--branco);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+
+/* PROJETOS VAZIOS */
+
+.projetos_vazio {
+
+    display: none;
+
+    min-width: 100%;
+
+    min-height: 330px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+.projetos_vazio.ativo {
+
+    display: flex;
+
+    animation:
+        aparecerVazio
+        0.5s ease;
+}
+
+.projetos_vazio span {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.projetos_vazio h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+}
+
+.projetos_vazio p {
+
+    max-width: 500px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+@keyframes aparecerVazio {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* =========================================================
+   CURIOSIDADES
+   ========================================================= */
+
+#curiosidades {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+#curiosidades_saturno {
+
+    width: 55px;
+
+    object-fit: contain;
+
+    animation:
+        saturnoFlutuando
+        3.5s ease-in-out infinite;
+}
+
+
+
+/* CARROSSEL */
+
+.curiosidades_carrossel {
+    width: 100%;
+    overflow: hidden;
+
+    cursor: grab;
+    touch-action: pan-y;
+}
+
+.curiosidades_carrossel:active {
+    cursor: grabbing;
+}
+
+.curiosidades_container {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+
+    /* O movimento agora é controlado pelo JavaScript */
+    will-change: transform;
+}
+
+
+
+/* CARD */
+
+.curiosidade_card {
+
+    position: relative;
+
+    flex:
+        0
+        0
+        310px;
+
+    min-height: 400px;
+}
+
+.curiosidades_container_card_resumo {
+
+    height: 400px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        rgba(10, 6, 15, 0.85);
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.25);
+
+    transition:
+        border-color 0.3s ease;
+}
+
+.curiosidades_container_card_resumo:hover {
+
+    border-color:
+        rgba(179, 147, 232, 0.65);
+}
+
+.curiosidades_container_card_resumo > img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+}
+
+.curiosidades_container_card_resumo h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.curiosidades_container_card_resumo p {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.curiosidade_botao {
+
+    align-self: flex-start;
+
+    margin-top: auto;
+
+    padding: 8px 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--destaque-claro);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.curiosidade_botao::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--destaque-claro);
+
+    transition: width 0.3s ease;
+}
+
+.curiosidade_botao:hover::after {
+
+    width: 100%;
+}
+
+
+
+/* CARD EXPANDIDO */
+
+.curiosidades_container_card_expandido {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    padding: 30px;
+
+    background:
+        rgba(8, 4, 13, 0.98);
+
+    border:
+        1px solid
+        var(--destaque-escuro);
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.curiosidades_container_card_expandido.ativo {
+
+    display: flex;
+
+    animation:
+        abrirCuriosidade
+        0.4s ease;
+}
+
+.curiosidades_container_card_expandido h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 26px;
+
+    font-weight: 400;
+}
+
+.curiosidades_container_card_expandido p {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.curiosidade_fechar {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 12px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--branco);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.curiosidade_fechar:hover {
+
+    color: var(--destaque-claro);
+
+    transform: rotate(90deg);
+}
+
+@keyframes abrirCuriosidade {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+#contato {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contato_container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 45px;
+}
+
+.contato_conteudo {
+    flex: 0 1 520px;
+}
+
+.contato_conteudo > .html-paragrafo {
+    margin-top: 25px;
+    max-width: 520px;
+}
+
+.contato_links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.contato_links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--branco);
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.contato_links a:hover {
+    transform: translateY(-4px);
+    color: var(--destaque-claro);
+}
+
+.contato_logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.contato_links a:hover .contato_logo {
+    transform: translateY(-4px);
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(179, 147, 232, 0.7)
+        );
+}
+
+.contato_colagem {
+    flex: 0 1 400px;
+    max-width: 400px;
+}
+
+.contato_colagem img {
+    width: 100%;
+    display: block;
+}
+
+
+
+/* =========================================================
+   ANIMAÇÃO DAS SEÇÕES
+   ========================================================= */
+
+#sobre,
+#habilidades,
+#projetos,
+#curiosidades,
+#contato {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+#sobre.mostrar,
+#habilidades.mostrar,
+#projetos.mostrar,
+#curiosidades.mostrar,
+#contato.mostrar {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    header {
+        padding: 0 25px;
+    }
+
+    header nav {
+        gap: 18px;
+    }
+
+    #sobre {
+        gap: 50px;
+    }
+
+    .sobre-imagens {
+        width: 350px;
+    }
+
+    .sobre_foto {
+        width: 280px;
+        height: 380px;
+    }
+
+    .sobre_saturno_orbita {
+        width: 340px;
+        height: 340px;
+    }
+
+}
+
+
+
+/* TABLET / MOBILE */
+
+@media (max-width: 768px) {
+
+    header {
+        height: 65px;
+
+        padding:
+            0
+            18px;
+    }
+
+    header nav {
+
+    position: absolute;
+
+    top: 65px;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    backdrop-filter: blur(8px);
+
+    border-top:
+        1px solid
+        rgba(179, 147, 232, 0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+header nav.menu-aberto {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.menu-hamburguer {
+
+    display: flex;
+
+    margin-left: auto;
+
+    margin-right: 10px;
+}
+
+    .logo img {
+        width: 38px;
+    }
+
+
+
+    #inicio {
+
+        padding:
+            130px
+            7%
+            80px;
+    }
+
+    #home-cursive {
+        font-size: 42px;
+    }
+
+    #inicio h1 {
+        font-size: clamp(48px, 13vw, 75px);
+    }
+
+
+
+    #sobre,
+    #habilidades,
+    #projetos,
+    #curiosidades,
+    #contato {
+
+        padding:
+            90px
+            6%;
+    }
+
+
+
+    #sobre {
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        text-align: left;
+    }
+
+    .sobre-imagens {
+
+        width: 300px;
+
+        height: 390px;
+    }
+
+    .sobre_foto {
+
+        width: 240px;
+
+        height: 320px;
+    }
+
+    .sobre_saturno_orbita {
+
+        width: 290px;
+
+        height: 290px;
+    }
+
+
+
+    .habilidades_container_card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .habilidades_card_logos {
+
+        min-width: auto;
+    }
+
+    .softskills_area {
+        top: 195px;
+        max-width: calc(100% - 40px);
+    }
+
+    #softskills-toggle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .habilidades_softskills {
+        left: 60px;
+        width: min(330px, calc(100vw - 80px));
+    }
+
+
+
+    .projetos_cabecalho {
+
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .projeto_conteudo {
+
+        flex-direction: column;
+    }
+
+    .projeto_filtro {
+
+        width: 100%;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+    }
+
+    #aside_img {
+
+        display: none;
+    }
+
+    .cards_container {
+
+        width: 100%;
+    }
+
+
+
+    .contato_container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contato_colagem {
+        display: none;
+    }
+
+    .contato_links {
+        justify-content: center;
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width: 430px) {
+
+    .musica-player {
+
+        width:
+            calc(100vw - 30px);
+
+        right: -5px;
+    }
+
+    .html-titulo-h1 {
+
+        font-size: 30px;
+    }
+
+    .subtitulo {
+
+        font-size: 25px;
+    }
+
+    .html-paragrafo {
+
+        font-size: 14px;
+    }
+
+
+
+    .habilidades_container_card {
+
+        padding: 25px;
+    }
+
+
+    .habilidades_softskills {
+
+        left: 50px;
+
+        width:
+            calc(100vw - 65px);
+
+        padding:
+            30px
+            20px;
+    }
+
+
+
+    .projetos_cabecalho {
+
+        flex-direction: column;
+    }
+
+    .projetos_navegacao {
+
+        align-self: flex-end;
+    }
+
+    .projeto_card {
+
+        flex-basis: 280px;
+    }
+
+
+
+    .curiosidade_card {
+
+        flex-basis: 280px;
+    }
+
+}

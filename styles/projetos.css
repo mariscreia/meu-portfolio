@@ -1,0 +1,689 @@
+:root {
+    --branco: #f4eef8;
+    --preto: #000000;
+    --destaque-escuro: #6430C0;
+    --destaque-claro: #B393E8;
+    --fundo-musica-expandido: #8E6DC5;
+
+    --titulo-destaque-gradiente: linear-gradient(
+        135deg,
+        #6430C0 0%,
+        #B08FE6 31%,
+        #A885E2 58%,
+        #7F52CE 86%,
+        #6430C0 100%
+    );
+
+    --cor-de-fundo-gradiente: linear-gradient(
+        135deg,
+        #000000 0%,
+        #06040A 17%,
+        #020103 36%,
+        #030204 50%,
+        #09050F 68%,
+        #140C1F 86%,
+        #190F28 100%
+    );
+
+    --fonte-paragrafo: 'Montserrat', sans-serif;
+    --fonte-destaque: 'Playfair Display', serif;
+    --numeros-e-termos: 'JetBrains Mono', monospace;
+}
+
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--cor-de-fundo-gradiente);
+    background-attachment: fixed;
+
+    color: var(--branco);
+    font-family: var(--fonte-paragrafo);
+}
+
+*:focus {
+    outline: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 50px;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* BOTÃO VOLTAR */
+
+.projeto_voltar {
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-family: var(--numeros-e-termos);
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.projeto_voltar:hover {
+    color: var(--destaque-claro);
+}
+
+
+/* =========================================================
+   PLAYER DE MÚSICA
+   ========================================================= */
+
+.musica-container {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+#musica-button {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+#musica-button img {
+
+    width: 30px;
+
+    height: auto;
+
+    transition:
+        transform 0.3s ease;
+}
+
+#musica-button:hover img {
+
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   ÍCONE DA MÚSICA — ANIMAÇÃO ENQUANTO TOCA
+   ========================================================= */
+
+#musica-button.tocando img {
+    animation:
+        musicaMexendo 1.2s ease-in-out infinite,
+        musicaBrilho 1.8s ease-in-out infinite;
+}
+
+@keyframes musicaMexendo {
+
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.08) rotate(-3deg);
+    }
+
+    50% {
+        transform: scale(1.12) rotate(3deg);
+    }
+
+    75% {
+        transform: scale(1.08) rotate(-2deg);
+    }
+
+}
+
+@keyframes musicaBrilho {
+
+    0%, 100% {
+        filter: drop-shadow(
+            0 0 0 rgba(179, 147, 232, 0)
+        );
+    }
+
+    50% {
+        filter: drop-shadow(
+            0 0 8px rgba(179, 147, 232, 0.8)
+        );
+    }
+
+}
+
+
+/* PLAYER EXPANDIDO */
+
+.musica-player {
+
+    position: absolute;
+
+    top: 45px;
+
+    right: 0;
+
+    width: 280px;
+
+    padding: 20px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: rgba(15, 9, 22, 0.96);
+
+    border:
+        1px solid
+        rgba(179, 147, 232, 0.4);
+
+    border-radius: 0 0 15px 15px;
+}
+
+.musica-player.ativo {
+
+    display: flex;
+}
+
+.musica-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.musica-label {
+
+    font-family:
+        var(--numeros-e-termos);
+
+    font-size: 11px;
+
+    color:
+        var(--branco);
+}
+
+#musica-titulo {
+
+    font-family:
+        var(--fonte-destaque);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color:
+        var(--branco);
+}
+
+.musica-controles {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.musica-controles button {
+
+    background: none;
+
+    border: none;
+
+    color: var(--branco);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.musica-controles button:hover {
+
+    color:
+        var(--destaque-claro);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
+
+.projeto_detalhes {
+    min-height: 100vh;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 150px 60px 80px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.9fr);
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* ==========================================================================
+   TEXTO
+   ========================================================================== */
+
+.projeto_texto {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.projeto_texto h1 {
+    font-family: var(--fonte-destaque);
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    font-weight: 400;
+    line-height: 1;
+
+    background: var(--titulo-destaque-gradiente);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.projeto_texto > p:first-of-type {
+    font-family: var(--numeros-e-termos);
+
+    color: var(--destaque-claro);
+
+    font-size: 14px;
+}
+
+.projeto_texto p {
+    font-family: var(--fonte-paragrafo);
+
+    color: var(--branco);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+h3 {
+    margin-top: 15px;
+
+    font-family: var(--fonte-destaque);
+
+    color: var(--branco);
+
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+
+/* ==========================================================================
+   TECNOLOGIAS
+   ========================================================================== */
+
+.projeto_tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: -5px;
+}
+
+.projeto_tecnologias span {
+    padding: 8px 14px;
+
+    border: 1px solid var(--destaque-escuro);
+
+    color: var(--branco);
+
+    font-family: var(--numeros-e-termos);
+
+    font-size: 12px;
+
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+.projeto_tecnologias span:hover {
+    background: var(--destaque-escuro);
+
+    color: var(--branco);
+}
+
+
+/* ==========================================================================
+   IMAGEM
+   ========================================================================== */
+
+.projeto_imagem {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.projeto_imagem img {
+    display: block;
+
+    width: 100%;
+    max-width: 500px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.4s ease;
+}
+
+.projeto_imagem img:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 20px 30px;
+    }
+
+    .projeto_detalhes {
+        grid-template-columns: 1fr;
+
+        max-width: 750px;
+
+        padding: 130px 40px 70px;
+
+        gap: 60px;
+    }
+
+    .projeto_texto {
+        order: 1;
+    }
+
+    .projeto_imagem {
+        order: 2;
+    }
+
+    .projeto_imagem img {
+        max-width: 550px;
+    }
+}
+
+
+/* ==========================================================================
+   CELULAR
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px 20px;
+    }
+
+    .projeto_voltar {
+        font-size: 12px;
+    }
+
+    #musica-button img {
+        width: 26px;
+    }
+
+    .musica-player {
+        position: fixed;
+
+        top: 65px;
+        right: 20px;
+
+        width: calc(100vw - 40px);
+
+        max-width: 300px;
+    }
+
+    .projeto_detalhes {
+        min-height: auto;
+
+        padding: 110px 25px 60px;
+
+        gap: 45px;
+    }
+
+    .projeto_texto {
+        gap: 18px;
+    }
+
+    .projeto_texto h1 {
+        font-size: clamp(38px, 12vw, 55px);
+    }
+
+    .projeto_texto > p:first-of-type {
+        font-size: 12px;
+    }
+
+    .projeto_texto p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .projeto_tecnologias {
+        gap: 8px;
+    }
+
+    .projeto_tecnologias span {
+        padding: 7px 10px;
+
+        font-size: 10px;
+    }
+
+    .projeto_imagem img {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   RESULTADO DO PROJETO
+   ========================================================================== */
+
+.projeto_resultado {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+
+/* CABEÇALHO */
+
+.resultado_cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    font-family: var(--numeros-e-termos);
+    font-size: 11px;
+
+    color: var(--destaque-claro);
+
+    letter-spacing: 1px;
+}
+
+
+/* MOLDURA */
+
+.resultado_moldura {
+    position: relative;
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: 1px solid var(--destaque-escuro);
+
+    background: rgba(20, 12, 31, 0.45);
+
+    box-shadow:
+        15px 15px 0 rgba(100, 48, 192, 0.15);
+
+    overflow: hidden;
+}
+
+
+/* VÍDEO */
+
+.resultado_moldura video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 1px solid rgba(179, 147, 232, 0.35);
+
+    object-fit: cover;
+}
+
+
+/* DETALHES DECORATIVOS */
+
+.resultado_detalhe {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 45px;
+    height: 45px;
+
+    border-color: var(--destaque-claro);
+
+    pointer-events: none;
+}
+
+.resultado_detalhe_1 {
+    top: 0;
+    left: 0;
+
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+.resultado_detalhe_2 {
+    right: 0;
+    bottom: 0;
+
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+/* ==========================================================================
+   RESULTADO — TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+    .projeto_resultado {
+        margin-top: 10px;
+    }
+
+    .resultado_moldura {
+        padding: 14px;
+    }
+}
+
+
+/* ==========================================================================
+   RESULTADO — CELULAR
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .resultado_cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
+
+        font-size: 9px;
+    }
+
+    .resultado_moldura {
+        padding: 10px;
+
+        box-shadow:
+            8px 8px 0 rgba(100, 48, 192, 0.15);
+    }
+
+    .resultado_detalhe {
+        width: 30px;
+        height: 30px;
+    }
+}
+

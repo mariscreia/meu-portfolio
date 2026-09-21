@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TL Perfumaria | Sara Rayane</title>
+
+    <link rel="icon" type="image/png" href="../assets/icones_e_logos/logo_saturno.png">
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html#projetos" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>TL Perfumaria</h1>
+
+            <p>Sistema de Gestão Web - HTML, CSS e JavaScript</p>
+
+            <p>
+                A TL Perfumaria foi desenvolvida como projeto de finalização da
+                bolsa de estudos da Softex, a partir da necessidade de uma empresa(TL Perfumaria)
+                que buscava uma forma mais organizada de gerenciar seus dados.
+                A proposta era facilitar o controle de clientes, fornecedores e
+                produtos, além de tornar os processos de compra e venda mais
+                simples e centralizados.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O projeto foi desenvolvido em grupo, durante a etapa de conclusão
+                do curso. Partimos das necessidades apresentadas pela empresa e
+                organizamos essas informações para definir as principais
+                funcionalidades que o sistema deveria oferecer.
+            </p>
+
+            <p>
+                A aplicação foi estruturada em diferentes áreas de gerenciamento,
+                incluindo dashboard, produtos e estoque, vendas, clientes,
+                fornecedores e financeiro. A ideia era reunir essas operações
+                em um único sistema, evitando que as informações ficassem
+                espalhadas e tornando o acompanhamento do negócio mais prático.
+            </p>
+
+            <p>
+                No desenvolvimento, utilizei JavaScript para criar a lógica e as
+                interações do sistema. Os dados cadastrados são armazenados no
+                navegador, permitindo manter informações de produtos, clientes,
+                fornecedores e movimentações durante o uso da aplicação.
+            </p>
+
+            <p>
+                Também foram trabalhadas regras para conectar diferentes partes
+                do sistema. Ao realizar uma venda, por exemplo, o sistema verifica
+                a disponibilidade do produto, calcula o valor da operação,
+                registra a venda e atualiza o estoque. Essas informações também
+                podem ser utilizadas pelo dashboard e pelo controle financeiro.
+            </p>
+
+            <p>
+                O projeto também conta com recursos como filtros de produtos,
+                alertas de estoque baixo, diferentes perfis de acesso e geração
+                de comprovante de venda. O resultado foi uma aplicação que
+                transformou as necessidades apresentadas pela empresa em uma
+                solução funcional de gestão.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>LocalStorage</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_tlperfumaria.jpeg"
+                alt="Interface do sistema TL Perfumaria"
+            >
+
+        </section>
+
+
+       <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>TL Perfumaria / 05</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_tlperfumaria.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+</body>
+
+</html>

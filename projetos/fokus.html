@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fokus | Sara Rayane</title>
+
+    <link rel="icon" type="image/png" href="../assets/icones_e_logos/logo_saturno.png">
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html#projetos" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>Fokus</h1>
+
+            <p>Desenvolvimento Web - JavaScript</p>
+
+            <p>
+                O Fokus nasceu de uma ideia simples: criar uma ferramenta que
+                ajudasse a tornar o momento de estudo mais organizado e facilitasse
+                a concentração. A proposta é transformar o temporizador em algo
+                mais completo, acompanhando não só o período de foco, mas também
+                os momentos de descanso.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O Fokus foi desenvolvido durante meus estudos na Alura, como uma forma de
+                aprender novos conceitos de desenvolvimento web e colocá-los em prática
+                através de um projeto funcional.
+            </p>
+
+            <p>
+                A partir da estrutura do projeto, fui explorando o JavaScript para entender
+                como criar um temporizador com diferentes contextos: foco, descanso curto
+                e descanso longo. Cada contexto também altera a aparência da página,
+                fazendo com que a interface acompanhe o momento selecionado.
+            </p>
+
+            <p>
+                Durante o desenvolvimento, também aprendi a trabalhar com eventos e
+                manipulação do DOM para controlar as interações da página. Além disso,
+                explorei a utilização de áudio para reproduzir músicas e sons de acordo
+                com as ações do usuário e com o encerramento do temporizador.
+            </p>
+
+            <p>
+                Como próxima etapa, pretendo ampliar o projeto adicionando uma
+                funcionalidade de tarefas, permitindo que o usuário organize aquilo que
+                deseja realizar durante seus períodos de foco.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Figma</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_fokus.jpeg"
+                alt="Interface do projeto Fokus"
+            >
+
+        </section>
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>Projeto Fokus / 01</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_fokus.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>

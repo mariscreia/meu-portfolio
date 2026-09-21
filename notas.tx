@@ -1,0 +1,2005 @@
+
+projetos
+
+cafedovento,fokus,javascriptdocs,linhadotempo,portfolio,SaGeAi,TLperfumaria
+
+aq eu ainda n coloquei js, a ideia é q eu coloque apenas as funcionaidades da musica, as mesmas q estao no index.js e adapar as variaveis no html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Café do Vento | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>Café do Vento</h1>
+
+            <p>Design - Identidade Visual</p>
+
+            <p>
+                O Café do Vento é um projeto autoral de identidade visual que
+                estou planejando desenvolver como uma forma de explorar direção
+                de arte, composição e criação de uma linguagem visual própria.
+                A proposta é imaginar uma marca de café com uma atmosfera
+                aconchegante, fantástica e ligada à natureza.
+            </p>
+
+            <h3>Como vou desenvolver</h3>
+
+            <p>
+                O projeto começará pela construção do conceito da marca. Antes
+                de pensar no logo, quero definir sua personalidade, sua história
+                e a sensação que a identidade deve transmitir. A partir disso,
+                vou reunir referências e criar um moodboard para estabelecer
+                uma direção visual.
+            </p>
+
+            <p>
+                Depois, pretendo explorar uma paleta de cores, tipografias,
+                formas e elementos gráficos que combinem com a proposta.
+                Também quero trabalhar com ilustrações e texturas que tragam
+                uma aparência mais artesanal e criem uma sensação de fantasia
+                sem perder a clareza da identidade.
+            </p>
+
+            <p>
+                Com a identidade definida, vou desenvolver suas aplicações,
+                como cardápio, embalagem, fachada e materiais para redes sociais.
+                Também pretendo criar mockups para visualizar como a identidade
+                funcionaria em diferentes situações.
+            </p>
+
+            <p>
+                A ideia é que o projeto funcione como um exercício completo de
+                construção de identidade visual, desde o conceito inicial até
+                suas aplicações, permitindo explorar não apenas a estética, mas
+                também a consistência entre diferentes peças.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>Figma</span>
+                <span>Design Gráfico</span>
+                <span>Direção de Arte</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_cafe-do-vento.jpeg"
+                alt="Projeto de identidade visual Café do Vento"
+            >
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fokus | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>Fokus</h1>
+
+            <p>Desenvolvimento Web - JavaScript</p>
+
+            <p>
+                O Fokus nasceu de uma ideia simples: criar uma ferramenta que
+                ajudasse a tornar o momento de estudo mais organizado e facilitasse
+                a concentração. A proposta é transformar o temporizador em algo
+                mais completo, acompanhando não só o período de foco, mas também
+                os momentos de descanso.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O Fokus foi desenvolvido durante meus estudos na Alura, como uma forma de
+                aprender novos conceitos de desenvolvimento web e colocá-los em prática
+                através de um projeto funcional.
+            </p>
+
+            <p>
+                A partir da estrutura do projeto, fui explorando o JavaScript para entender
+                como criar um temporizador com diferentes contextos: foco, descanso curto
+                e descanso longo. Cada contexto também altera a aparência da página,
+                fazendo com que a interface acompanhe o momento selecionado.
+            </p>
+
+            <p>
+                Durante o desenvolvimento, também aprendi a trabalhar com eventos e
+                manipulação do DOM para controlar as interações da página. Além disso,
+                explorei a utilização de áudio para reproduzir músicas e sons de acordo
+                com as ações do usuário e com o encerramento do temporizador.
+            </p>
+
+            <p>
+                Como próxima etapa, pretendo ampliar o projeto adicionando uma
+                funcionalidade de tarefas, permitindo que o usuário organize aquilo que
+                deseja realizar durante seus períodos de foco.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Figma</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_fokus.jpeg"
+                alt="Interface do projeto Fokus"
+            >
+
+        </section>
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>Projeto Fokus / 01</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_javascriptdocs.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Docs | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>JavaScript Docs</h1>
+
+            <p>Desenvolvimento Web - HTML, CSS e JavaScript</p>
+
+            <p>
+                O JavaScript Docs nasceu de uma dificuldade que encontrei durante
+                meus estudos: aprender e revisar JavaScript nem sempre era simples.
+                Para tornar esse processo mais visual e fácil de consultar, reuni
+                os principais conceitos que estava estudando em uma documentação
+                própria, organizada como um guia de revisão.
+            </p>
+
+            <p>
+                E existe uma pequena ironia no projeto: para criar uma ferramenta
+                que me ajudasse a estudar JavaScript, eu precisei usar JavaScript.
+                KKKKK. No fim, a própria dificuldade acabou se transformando em
+                uma oportunidade de praticar a linguagem de uma forma mais
+                significativa.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                Comecei reunindo e resumindo os conteúdos que estava aprendendo,
+                organizando os conceitos em categorias como fundamentos, lógica de
+                programação, funções, estruturas de dados, DOM e conceitos
+                avançados. A intenção era transformar uma documentação extensa
+                em algo que pudesse consultar rapidamente durante os estudos.
+            </p>
+
+            <p>
+                Depois, transformei esse conteúdo em uma interface de consulta,
+                utilizando cards e páginas separadas para organizar os assuntos.
+                Também criei uma barra de pesquisa para localizar conceitos sem
+                precisar percorrer toda a documentação.
+            </p>
+
+            <p>
+                O JavaScript foi utilizado para tornar essa documentação
+                interativa. A pesquisa filtra os cards conforme o usuário digita,
+                exibindo uma mensagem quando nenhum conceito é encontrado.
+                Também implementei uma navegação suave entre as seções e um efeito
+                de entrada para os cards.
+            </p>
+
+            <p>
+                Mais do que criar uma página de estudos, o projeto acabou se
+                tornando uma forma de registrar minha evolução com a linguagem.
+                Cada novo conceito que aprendo pode ser transformado em mais uma
+                parte da documentação, fazendo com que o projeto continue
+                acompanhando meu aprendizado.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_javascriptdocs.jpeg"
+                alt="Interface do projeto JavaScript Docs"
+            >
+
+        </section>
+
+
+        <section class="projeto_resultado">
+
+            <h3>Resultado</h3>
+
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>JAVASCRIPT DOCS / 03</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_javascriptdocs.mp4"
+                            type="video/mp4"
+                        >
+                    </video>
+
+                </div>
+
+            </section>
+
+
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linha do Tempo | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>Linha do Tempo</h1>
+
+            <p>Desenvolvimento Web - Projeto Interdisciplinar</p>
+
+            <p>
+                A Linha do Tempo surgiu durante a conclusão do meu Ensino Médio no Instituto 
+                Federal de Educação, Ciência e Tecnologia do Maranhão(IFMA), a partir
+                de um projeto para a Feira do Empreendedorismo. A proposta
+                reunia alunos dos cursos de Informática para Internet e
+                Administração para criar uma empresa e desenvolver sua presença
+                digital.
+            </p>
+
+            <p>
+                O resultado foi uma empresa com uma proposta retrô, que combina
+                alimentação, entretenimento e uma experiência inspirada em
+                diferentes épocas. O site funciona como uma vitrine da empresa,
+                apresentando seu cardápio e também uma Central de Jogos criada
+                para ampliar a experiência dos visitantes.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O projeto foi desenvolvido em conjunto com integrantes dos cursos
+                de Informática para Internet e Administração. Enquanto a parte
+                administrativa ajudava a construir a proposta e a organização
+                da empresa, a equipe de informática ficou responsável por
+                transformar essa ideia em uma experiência digital.
+            </p>
+
+            <p>
+                A partir da identidade da empresa, desenvolvemos o site com uma
+                estética retrô, criando uma página inicial, navegação por
+                categorias, seção sobre a empresa e área de contato. Também
+                trabalhamos na apresentação do cardápio e na integração com
+                diferentes áreas da aplicação.
+            </p>
+
+            <p>
+                Um dos diferenciais do projeto foi a Central de Jogos. Além da
+                função comercial do site, criamos um espaço de entretenimento
+                com jogos desenvolvidos para fazer parte da experiência da
+                empresa, incluindo o Delivery Dash e o Snake.
+            </p>
+
+            <p>
+                O projeto também envolveu a organização de diferentes páginas,
+                elementos visuais, imagens, navegação e adaptação da interface
+                para diferentes dispositivos. Foi uma experiência de aplicar
+                conhecimentos técnicos em uma situação que simulava a criação
+                de um produto para uma empresa real.
+            </p>
+
+            <p>
+                Ao final da Feira do Empreendedorismo, a Linha do Tempo ficou
+                em primeiro lugar na categoria de melhor site, tornando o
+                projeto uma das experiências mais marcantes da minha formação
+                no IFMA.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>GitHub</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_linha-do-tempo.jpeg"
+                alt="Interface do site Linha do Tempo"
+            >
+
+        </section>
+
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>Linha Do Tempo / 02</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_javascriptdocs.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>Meu Portfólio</h1>
+
+            <p>Design - UI/UX e Desenvolvimento Web</p>
+
+            <p>
+                Este portfólio é, além de uma forma de apresentar meu trabalho, um registro
+                da minha trajetória aprendendo desenvolvimento web e design. Ele foi sendo
+                construído enquanto eu aprendia, testava ideias, mudava decisões e descobria
+                novas possibilidades para transformar aquilo que imaginava em algo que
+                realmente funcionasse.
+            </p>
+
+            <p>
+                Desde o início, eu queria fugir de um portfólio com aparência genérica.
+                Queria criar algo que tivesse personalidade e que também pudesse mostrar um
+                pouco da forma como penso e enxergo meus próprios projetos. Foi daí que
+                surgiu a identidade visual baseada em tons escuros e roxos, colagens,
+                fotografias, texturas e o Saturno como um dos elementos recorrentes.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                A primeira etapa foi o planejamento do layout no Figma. Antes de começar a
+                programar, explorei referências, organizei as seções e testei diferentes
+                formas de apresentar minhas informações. Aos poucos, fui construindo a
+                identidade visual e definindo como cada parte do portfólio deveria se
+                comportar.
+            </p>
+
+            <p>
+                Depois começou a parte em que as coisas ficaram mais interessantes — e um
+                pouco caóticas. KKKKK. Transformar o que estava no Figma em código exigiu
+                que eu entendesse melhor HTML, CSS e JavaScript, além de aprender a lidar
+                com problemas que simplesmente não existiam enquanto tudo ainda era um
+                protótipo.
+            </p>
+
+            <p>
+                Durante esse processo, fui construindo as páginas, ajustando os elementos,
+                criando as colagens, testando interações e descobrindo como fazer a
+                experiência que eu tinha imaginado realmente funcionar. Algumas ideias
+                precisaram ser refeitas, outras mudaram completamente no caminho.
+            </p>
+
+            <p>
+                O projeto também acabou se tornando uma forma de aprender enquanto
+                desenvolvo. Em vez de separar completamente estudo e prática, fui usando
+                o próprio portfólio como laboratório: quando surgia uma coisa que eu não
+                sabia fazer, eu estudava, testava e tentava encaixar aquele conhecimento
+                no projeto.
+            </p>
+
+            <p>
+                Ainda estou aprimorando algumas partes, principalmente a adaptação de
+                algumas telas para dispositivos móveis. Por isso, o portfólio continua
+                sendo um projeto em construção — assim como a própria trajetória que ele
+                representa.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>Figma</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>UI/UX</span>
+
+            </div>
+
+        </section>
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_portfolio.jpeg"
+                alt="Interface do sistema Potfólio"
+            >
+
+        </section>
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>Luna Portfólio / 06</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_javascriptdocs.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/index.js"></script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SaGeAi Hotéis | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>SaGeAi Hotéis</h1>
+
+            <p>Desenvolvimento Web - HTML e CSS</p>
+
+            <p>
+                O SaGeAi foi desenvolvido como um projeto de aprendizagem durante
+                o curso de Front-end da Softex, reunindo em uma única experiência
+                uma seleção de hotéis e informações sobre diferentes destinos.
+                A proposta foi criar uma interface que tornasse a exploração das
+                hospedagens mais visual e intuitiva.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O projeto foi desenvolvido durante uma bolsa de estudos da Softex,
+                como parte das atividades do curso de Front-end. O desenvolvimento
+                aconteceu em conjunto com outras duas integrantes do meu grupo,
+                tornando o projeto também uma experiência de trabalho colaborativo.
+            </p>
+
+            <p>
+                A construção começou pela organização das informações que seriam
+                apresentadas ao usuário. A partir disso, desenvolvemos uma página
+                inicial com os hotéis selecionados, utilizando cards para apresentar
+                suas principais informações de forma rápida e visual.
+            </p>
+
+            <p>
+                Também foram criadas páginas individuais para cada hospedagem,
+                permitindo explorar diferentes detalhes sobre elas, como
+                acomodações, gastronomia e principais atrativos. Para conectar
+                todas essas informações, trabalhamos com múltiplas páginas e uma
+                estrutura de navegação entre elas.
+            </p>
+
+            <p>
+                Na parte visual, utilizei HTML e CSS para estruturar e estilizar
+                as páginas, trabalhando com imagens, cards, espaçamentos, efeitos
+                de interação e responsividade. O projeto foi uma oportunidade
+                importante para colocar em prática os conceitos de Front-end
+                aprendidos durante o curso.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Responsividade</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_sageai-hoteis.jpeg"
+                alt="Interface do projeto SaGeAi Hotéis"
+            >
+
+        </section>
+
+
+        <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>SaGeAi Hpteis & Turismo / 04</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_javascriptdocs.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+    <script src="../scripts/projetos.js"></script>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TL Perfumaria | Sara Rayane</title>
+
+    <link rel="stylesheet" href="../styles/projetos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="projeto_voltar">
+            ← Voltar
+        </a>
+
+        <div class="musica-container">
+
+            <button id="musica-button" aria-label="Abrir player de música">
+                <img src="../assets/icones_e_logos/musica.png" alt="Música">
+            </button>
+
+            <div id="musica-player" class="musica-player">
+
+                <div class="musica-info">
+                    <span class="musica-label">TOCANDO AGORA</span>
+                    <h3 id="musica-titulo">Intro — The xx</h3>
+                </div>
+
+                <div class="musica-controles">
+
+                    <button id="musica-play" aria-label="Tocar ou pausar música">
+                        ▶
+                    </button>
+
+                    <button id="musica-anterior" aria-label="Música anterior">
+                        ←
+                    </button>
+
+                    <button id="musica-proxima" aria-label="Próxima música">
+                        →
+                    </button>
+
+                </div>
+
+                <audio id="audio-musica"></audio>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="projeto_detalhes">
+
+        <section class="projeto_texto">
+
+            <h1>TL Perfumaria</h1>
+
+            <p>Sistema de Gestão Web - HTML, CSS e JavaScript</p>
+
+            <p>
+                A TL Perfumaria foi desenvolvida como projeto de finalização da
+                bolsa de estudos da Softex, a partir da necessidade de uma empresa(TL Perfumaria)
+                que buscava uma forma mais organizada de gerenciar seus dados.
+                A proposta era facilitar o controle de clientes, fornecedores e
+                produtos, além de tornar os processos de compra e venda mais
+                simples e centralizados.
+            </p>
+
+            <h3>Processo</h3>
+
+            <p>
+                O projeto foi desenvolvido em grupo, durante a etapa de conclusão
+                do curso. Partimos das necessidades apresentadas pela empresa e
+                organizamos essas informações para definir as principais
+                funcionalidades que o sistema deveria oferecer.
+            </p>
+
+            <p>
+                A aplicação foi estruturada em diferentes áreas de gerenciamento,
+                incluindo dashboard, produtos e estoque, vendas, clientes,
+                fornecedores e financeiro. A ideia era reunir essas operações
+                em um único sistema, evitando que as informações ficassem
+                espalhadas e tornando o acompanhamento do negócio mais prático.
+            </p>
+
+            <p>
+                No desenvolvimento, utilizei JavaScript para criar a lógica e as
+                interações do sistema. Os dados cadastrados são armazenados no
+                navegador, permitindo manter informações de produtos, clientes,
+                fornecedores e movimentações durante o uso da aplicação.
+            </p>
+
+            <p>
+                Também foram trabalhadas regras para conectar diferentes partes
+                do sistema. Ao realizar uma venda, por exemplo, o sistema verifica
+                a disponibilidade do produto, calcula o valor da operação,
+                registra a venda e atualiza o estoque. Essas informações também
+                podem ser utilizadas pelo dashboard e pelo controle financeiro.
+            </p>
+
+            <p>
+                O projeto também conta com recursos como filtros de produtos,
+                alertas de estoque baixo, diferentes perfis de acesso e geração
+                de comprovante de venda. O resultado foi uma aplicação que
+                transformou as necessidades apresentadas pela empresa em uma
+                solução funcional de gestão.
+            </p>
+
+            <h3>Tecnologias</h3>
+
+            <div class="projeto_tecnologias">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>LocalStorage</span>
+
+            </div>
+
+        </section>
+
+
+        <section class="projeto_imagem">
+
+            <img
+                src="../assets/img/projetos_expandido_tlperfumaria.jpeg"
+                alt="Interface do sistema TL Perfumaria"
+            >
+
+        </section>
+
+
+       <section class="projeto_resultado">
+
+            <div class="resultado_cabecalho">
+                <span>RESULTADO</span>
+                <span>TL Perfumaria / 05</span>
+            </div>
+
+            <div class="resultado_moldura">
+
+                <div class="resultado_detalhe resultado_detalhe_1"></div>
+                <div class="resultado_detalhe resultado_detalhe_2"></div>
+
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="../assets/videos/projeto_resultado_tlperfumaria.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/projetos.js"></script>
+</body>
+
+</html>
+
+\:root {
+
+    --branco: #f4eef8;
+
+    --preto: #000000;
+
+    --destaque-escuro: #6430C0;
+
+    --destaque-claro: #B393E8;
+
+    --fundo-musica-expandido: #8E6DC5;
+
+    --titulo-destaque-gradiente: linear-gradient(
+
+        135deg,
+
+        #6430C0 0%,
+
+        #B08FE6 31%,
+
+        #A885E2 58%,
+
+        #7F52CE 86%,
+
+        #6430C0 100%
+
+    );
+
+    --cor-de-fundo-gradiente: linear-gradient(
+
+        135deg,
+
+        #000000 0%,
+
+        #06040A 17%,
+
+        #020103 36%,
+
+        #030204 50%,
+
+        #09050F 68%,
+
+        #140C1F 86%,
+
+        #190F28 100%
+
+    );
+
+    --fonte-paragrafo: 'Montserrat', sans-serif;
+
+    --fonte-destaque: 'Playfair Display', serif;
+
+    --numeros-e-termos: 'JetBrains Mono', monospace;
+
+}
+
+
+
+/\* ==========================================================================
+
+   RESET
+
+   ========================================================================== \*/
+
+\* {
+
+    *margin*: 0;
+
+    *padding*: 0;
+
+    *box-sizing*: border-box;
+
+}
+
+html {
+
+    *scroll-behavior*: smooth;
+
+}
+
+body {
+
+    *min-height*: 100vh;
+
+    *background*: var(--cor-de-fundo-gradiente);
+
+    *background-attachment*: fixed;
+
+    *color*: var(--branco);
+
+    *font-family*: var(--fonte-paragrafo);
+
+}
+
+
+
+/\* ==========================================================================
+
+   HEADER
+
+   ========================================================================== \*/
+
+header {
+
+    *position*: fixed;
+
+    *top*: 0;
+
+    *left*: 0;
+
+    *z-index*: 10;
+
+    *width*: 100%;
+
+    *display*: flex;
+
+    *align-items*: center;
+
+    *justify-content*: space-between;
+
+    *padding*: 25px 50px;
+
+    *background*: rgba(0, 0, 0, 0.25);
+
+    *backdrop-filter*: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+}
+
+
+
+/\* BOTÃO VOLTAR \*/
+
+.projeto\_voltar {
+
+    *color*: var(--branco);
+
+    *text-decoration*: none;
+
+    *font-family*: var(--numeros-e-termos);
+
+    *font-size*: 14px;
+
+    *transition*: color 0.3s ease;
+
+}
+
+.projeto\_voltar\:hover {
+
+    *color*: var(--destaque-claro);
+
+}
+
+
+
+/\* ==========================================================================
+
+   PLAYER DE MÚSICA
+
+   ========================================================================== \*/
+
+.musica-container {
+
+    *position*: relative;
+
+    *display*: flex;
+
+    *align-items*: center;
+
+}
+
+\#musica-button {
+
+    *background*: none;
+
+    *border*: none;
+
+    *cursor*: pointer;
+
+}
+
+\#musica-button img {
+
+    *width*: 30px;
+
+    *height*: auto;
+
+    *transition*: transform 0.3s ease;
+
+}
+
+\#musica-button\:hover img {
+
+    *transform*: scale(1.1);
+
+}
+
+
+
+/\* PLAYER EXPANDIDO \*/
+
+.musica-player {
+
+    *position*: absolute;
+
+    *top*: 45px;
+
+    *right*: 0;
+
+    *width*: 280px;
+
+    *padding*: 20px;
+
+    *display*: none;
+
+    *flex-direction*: column;
+
+    *gap*: 20px;
+
+    *background*: var(--fundo-musica-expandido);
+
+    *border-radius*: 0 0 15px 15px;
+
+}
+
+.musica-player.ativo {
+
+    *display*: flex;
+
+}
+
+.musica-info {
+
+    *display*: flex;
+
+    *flex-direction*: column;
+
+    *gap*: 5px;
+
+}
+
+.musica-label {
+
+    *font-family*: var(--numeros-e-termos);
+
+    *font-size*: 11px;
+
+    *color*: var(--branco);
+
+}
+
+\#musica-titulo {
+
+    *font-family*: var(--fonte-destaque);
+
+    *font-size*: 18px;
+
+    *font-weight*: 400;
+
+    *color*: var(--branco);
+
+}
+
+.musica-controles {
+
+    *display*: flex;
+
+    *align-items*: center;
+
+    *gap*: 15px;
+
+}
+
+.musica-controles button {
+
+    *background*: none;
+
+    *border*: none;
+
+    *color*: var(--branco);
+
+    *font-size*: 18px;
+
+    *cursor*: pointer;
+
+    *transition*: color 0.3s ease,
+
+                transform 0.3s ease;
+
+}
+
+.musica-controles button\:hover {
+
+    *color*: var(--destaque-claro);
+
+    *transform*: translateY(-2px);
+
+}
+
+
+
+/\* ==========================================================================
+
+   CONTEÚDO PRINCIPAL
+
+   ========================================================================== \*/
+
+.projeto\_detalhes {
+
+    *min-height*: 100vh;
+
+    *max-width*: 1200px;
+
+    *margin*: 0 auto;
+
+    *padding*: 150px 60px 80px;
+
+    *display*: grid;
+
+    *grid-template-columns*: minmax(0, 1fr) minmax(350px, 0.9fr);
+
+    *align-items*: center;
+
+    *gap*: 80px;
+
+}
+
+
+
+/\* ==========================================================================
+
+   TEXTO
+
+   ========================================================================== \*/
+
+.projeto\_texto {
+
+    *display*: flex;
+
+    *flex-direction*: column;
+
+    *gap*: 22px;
+
+}
+
+.projeto\_texto h1 {
+
+    *font-family*: var(--fonte-destaque);
+
+    *font-size*: clamp(42px, 5vw, 70px);
+
+    *font-weight*: 400;
+
+    *line-height*: 1;
+
+    *background*: var(--titulo-destaque-gradiente);
+
+    -webkit-background-clip: text;
+
+    *background-clip*: text;
+
+    *color*: transparent;
+
+}
+
+.projeto\_texto > p\:first-of-type {
+
+    *font-family*: var(--numeros-e-termos);
+
+    *color*: var(--destaque-claro);
+
+    *font-size*: 14px;
+
+}
+
+.projeto\_texto p {
+
+    *font-family*: var(--fonte-paragrafo);
+
+    *color*: var(--branco);
+
+    *font-size*: 15px;
+
+    *line-height*: 1.8;
+
+}
+
+h3 {
+
+    *margin-top*: 15px;
+
+    *font-family*: var(--fonte-destaque);
+
+    *color*: var(--branco);
+
+    *font-size*: 27px;
+
+    *font-weight*: 400;
+
+}
+
+
+
+/\* ==========================================================================
+
+   TECNOLOGIAS
+
+   ========================================================================== \*/
+
+.projeto\_tecnologias {
+
+    *display*: flex;
+
+    *flex-wrap*: wrap;
+
+    *gap*: 12px;
+
+    *margin-top*: -5px;
+
+}
+
+.projeto\_tecnologias span {
+
+    *padding*: 8px 14px;
+
+    *border*: 1px solid var(--destaque-escuro);
+
+    *color*: var(--branco);
+
+    *font-family*: var(--numeros-e-termos);
+
+    *font-size*: 12px;
+
+    *transition*: background 0.3s ease,
+
+                color 0.3s ease;
+
+}
+
+.projeto\_tecnologias span\:hover {
+
+    *background*: var(--destaque-escuro);
+
+    *color*: var(--branco);
+
+}
+
+
+
+/\* ==========================================================================
+
+   IMAGEM
+
+   ========================================================================== \*/
+
+.projeto\_imagem {
+
+    *display*: flex;
+
+    *justify-content*: center;
+
+    *align-items*: center;
+
+}
+
+.projeto\_imagem img {
+
+    *display*: block;
+
+    *width*: 100%;
+
+    *max-width*: 500px;
+
+    *height*: auto;
+
+    *object-fit*: contain;
+
+    *transition*: transform 0.4s ease;
+
+}
+
+.projeto\_imagem img\:hover {
+
+    *transform*: translateY(-5px);
+
+}
+
+
+
+/\* ==========================================================================
+
+   TABLET
+
+   ========================================================================== \*/
+
+@media (max-width: 900px) {
+
+    header {
+
+        *padding*: 20px 30px;
+
+    }
+
+    .projeto\_detalhes {
+
+        *grid-template-columns*: 1fr;
+
+        *max-width*: 750px;
+
+        *padding*: 130px 40px 70px;
+
+        *gap*: 60px;
+
+    }
+
+    .projeto\_texto {
+
+        *order*: 1;
+
+    }
+
+    .projeto\_imagem {
+
+        *order*: 2;
+
+    }
+
+    .projeto\_imagem img {
+
+        *max-width*: 550px;
+
+    }
+
+}
+
+
+
+/\* ==========================================================================
+
+   CELULAR
+
+   ========================================================================== \*/
+
+@media (max-width: 600px) {
+
+    header {
+
+        *padding*: 18px 20px;
+
+    }
+
+    .projeto\_voltar {
+
+        *font-size*: 12px;
+
+    }
+
+    #musica-button img {
+
+        *width*: 26px;
+
+    }
+
+    .musica-player {
+
+        *position*: fixed;
+
+        *top*: 65px;
+
+        *right*: 20px;
+
+        *width*: calc(100vw - 40px);
+
+        *max-width*: 300px;
+
+    }
+
+    .projeto\_detalhes {
+
+        *min-height*: auto;
+
+        *padding*: 110px 25px 60px;
+
+        *gap*: 45px;
+
+    }
+
+    .projeto\_texto {
+
+        *gap*: 18px;
+
+    }
+
+    .projeto\_texto h1 {
+
+        *font-size*: clamp(38px, 12vw, 55px);
+
+    }
+
+    .projeto\_texto > p\:first-of-type {
+
+        *font-size*: 12px;
+
+    }
+
+    .projeto\_texto p {
+
+        *font-size*: 14px;
+
+        *line-height*: 1.7;
+
+    }
+
+    h3 {
+
+        *font-size*: 24px;
+
+    }
+
+    .projeto\_tecnologias {
+
+        *gap*: 8px;
+
+    }
+
+    .projeto\_tecnologias span {
+
+        *padding*: 7px 10px;
+
+        *font-size*: 10px;
+
+    }
+
+    .projeto\_imagem img {
+
+        *width*: 100%;
+
+    }
+
+}
+
+/\* ==========================================================================
+
+   RESULTADO DO PROJETO
+
+   ========================================================================== \*/
+
+.projeto\_resultado {
+
+    *grid-column*: 1 / -1;
+
+    *width*: 100%;
+
+    *margin-top*: 30px;
+
+}
+
+
+
+/\* CABEÇALHO \*/
+
+.resultado\_cabecalho {
+
+    *display*: flex;
+
+    *align-items*: center;
+
+    *justify-content*: space-between;
+
+    *margin-bottom*: 18px;
+
+    *font-family*: var(--numeros-e-termos);
+
+    *font-size*: 11px;
+
+    *color*: var(--destaque-claro);
+
+    *letter-spacing*: 1px;
+
+}
+
+
+
+/\* MOLDURA \*/
+
+.resultado\_moldura {
+
+    *position*: relative;
+
+    *width*: 100%;
+
+    *padding*: 18px;
+
+    *border*: 1px solid var(--destaque-escuro);
+
+    *background*: rgba(20, 12, 31, 0.45);
+
+    *box-shadow*:
+
+        15px 15px 0 rgba(100, 48, 192, 0.15);
+
+    *overflow*: hidden;
+
+}
+
+
+
+/\* VÍDEO \*/
+
+.resultado\_moldura video {
+
+    *display*: block;
+
+    *width*: 100%;
+
+    *height*: auto;
+
+    *border*: 1px solid rgba(179, 147, 232, 0.35);
+
+    *object-fit*: cover;
+
+}
+
+
+
+/\* DETALHES DECORATIVOS \*/
+
+.resultado\_detalhe {
+
+    *position*: absolute;
+
+    *z-index*: 2;
+
+    *width*: 45px;
+
+    *height*: 45px;
+
+    *border-color*: var(--destaque-claro);
+
+    *pointer-events*: none;
+
+}
+
+.resultado\_detalhe\_1 {
+
+    *top*: 0;
+
+    *left*: 0;
+
+    *border-top*: 1px solid;
+
+    *border-left*: 1px solid;
+
+}
+
+.resultado\_detalhe\_2 {
+
+    *right*: 0;
+
+    *bottom*: 0;
+
+    *border-right*: 1px solid;
+
+    *border-bottom*: 1px solid;
+
+}
+
+
+
+/\* ==========================================================================
+
+   RESULTADO — TABLET
+
+   ========================================================================== \*/
+
+@media (max-width: 900px) {
+
+    .projeto\_resultado {
+
+        *margin-top*: 10px;
+
+    }
+
+    .resultado\_moldura {
+
+        *padding*: 14px;
+
+    }
+
+}
+
+
+
+/\* ==========================================================================
+
+   RESULTADO — CELULAR
+
+   ========================================================================== \*/
+
+@media (max-width: 600px) {
+
+    .resultado\_cabecalho {
+
+        *flex-direction*: column;
+
+        *align-items*: flex-start;
+
+        *gap*: 5px;
+
+        *font-size*: 9px;
+
+    }
+
+    .resultado\_moldura {
+
+        *padding*: 10px;
+
+        *box-shadow*:
+
+            8px 8px 0 rgba(100, 48, 192, 0.15);
+
+    }
+
+    .resultado\_detalhe {
+
+        *width*: 30px;
+
+        *height*: 30px;
+
+    }
+
+}
+
+eu ainda vou add o resto dos videos resultados
